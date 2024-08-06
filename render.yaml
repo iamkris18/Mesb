@@ -1,12 +1,12 @@
 databases:
-  - name: MessageBoard
-    databaseName: postgresql
-    user: kris
+  - name: mysite
+    databaseName: mysite
+    user: mysite
     plan: free
 
 services:
   - type: web
-    name: krishservise
+    name: mysite
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
