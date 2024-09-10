@@ -2,8 +2,6 @@ class MessagesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
     before_action :find_message, only: [:show, :edit, :update, :destroy]
 
-
-
     def index
         @messages=Message.all.order("created_at DESC")
     end
@@ -40,8 +38,7 @@ class MessagesController < ApplicationController
     end
     def destroy
         @message.destroy
-        redirect_to root_path, notice: 'Deleted Successfully'
-
+        redirect_to user_session_path, notice: 'Deleted Successfully'
 
     end
 
